@@ -10,9 +10,6 @@ public:
 
 	int Generate();
 
-	void SetDeviations(float deviations);
-	float Deviations() const;
-
 	const int m_MinResult;
 	const int m_MaxResult;
 	const float m_Mean;
