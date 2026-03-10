@@ -1,2 +1,2 @@
-# Balanced-Randomness-Engine
-A random number generator that prevents statistical outliers.
+# Balanced Randomness Engine
+This random number generator generates "balanced" result by making sure that the sum of all generated numbers stays within a specified range. This ensures that the set of numbers you generate as a whole can't go past a certain distance from the average, removing statistical outliers that would occur when many such sets are generated. Basically, it ensures randomness to a certain degree.
