@@ -11,11 +11,14 @@ public:
 	int Generate();
 
 	void SetDeviations(float deviations);
+	float Deviations() const;
 
 	const int m_MinResult;
 	const int m_MaxResult;
 	const float m_Mean;
 	const float m_StandardDeviation;
+
+	float m_Deviations;
 
 private:
 	static float CalculateStandardDeviation(int min, int max);
@@ -23,7 +26,6 @@ private:
 	std::random_device m_RD; //unitialized by design
 	std::uniform_int_distribution<int> m_Distribution;
 
-	float m_Deviations;
 	int m_Sum{};
 	int m_AmountGenerated{};
 };

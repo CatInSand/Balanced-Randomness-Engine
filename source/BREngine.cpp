@@ -37,11 +37,6 @@ int BREngine::Generate()
 	return result;
 }
 
-void BREngine::SetDeviations(float deviations)
-{
-	m_Deviations = deviations;
-}
-
 float BREngine::CalculateStandardDeviation(int min, int max)
 {
 	int count{ min + max - 1 };
