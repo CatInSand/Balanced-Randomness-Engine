@@ -3,5 +3,9 @@
 
 int main()
 {
-	std::cout << "Hello, world!\n";
+	BREngine brEngine{ 1, 20 };
+	std::cout << "Random number: " << brEngine.Generate() << "\n";
+	std::cout << "Random number: " << brEngine.Generate() << "\n";
+	std::cout << "Random number: " << brEngine.Generate() << "\n";
+	std::cout << "Random number: " << brEngine.Generate() << "\n";
 }
