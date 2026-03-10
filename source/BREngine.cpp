@@ -37,6 +37,12 @@ int BREngine::Generate()
 	return result;
 }
 
+void BREngine::Reset()
+{
+	m_Sum = 0;
+	m_AmountGenerated = 0;
+}
+
 float BREngine::CalculateStandardDeviation(int min, int max)
 {
 	int count{ min + max - 1 };

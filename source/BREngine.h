@@ -9,6 +9,7 @@ public:
 	BREngine(int min, int max, float deviations = 2.f);
 
 	int Generate();
+	void Reset();
 
 	const int m_MinResult;
 	const int m_MaxResult;
