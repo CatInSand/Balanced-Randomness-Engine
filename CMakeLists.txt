@@ -10,7 +10,7 @@ set(SOURCES
     "source/main.cpp")
 
 # Create the executable
-add_executable(${PROJECT_NAME} ${SOURCES})
+add_executable(${PROJECT_NAME} ${SOURCES} "source/BREngine.cpp")
 
 # Add include directories
 target_include_directories(${PROJECT_NAME}
