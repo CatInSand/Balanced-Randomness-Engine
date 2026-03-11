@@ -13,28 +13,22 @@ BREngine::BREngine(int min, int max, float deviations)
 
 int BREngine::Generate()
 {
-	int result{ m_Distribution(m_RD) };
+	const float cumulativeMean{ (m_Count + 1) * m_Mean };
+	const float cumulativeDeviation{ sqrt(static_cast<float>(m_Count + 1)) * m_StandardDeviation };
+	const float lowerBound{ cumulativeMean - cumulativeDeviation * m_Deviations };
+	const float upperBound{ cumulativeMean + cumulativeDeviation * m_Deviations };
 
-	bool valid{ false };
-	do
+	while (true)
 	{
-		result = m_Distribution(m_RD);
-
-		float cumulativeMean{ (m_Count + 1) * m_Mean };
-		float cumulativeDeviation{ sqrt(static_cast<float>(m_Count + 1)) * m_StandardDeviation };
-
-		if (m_Sum + result > cumulativeMean - cumulativeDeviation * m_Deviations &&
-			m_Sum + result < cumulativeMean + cumulativeDeviation * m_Deviations)
+		int result{ m_Distribution(m_RD) };
+		if (m_Sum + result > lowerBound &&
+			m_Sum + result < upperBound)
 		{
-			valid = true;
+			m_Sum += result;
+			++m_Count;
+			return result;
 		}
-
-	} while (!valid);
-
-	m_Sum += result;
-	++m_Count;
-
-	return result;
+	}
 }
 
 void BREngine::Reset()
