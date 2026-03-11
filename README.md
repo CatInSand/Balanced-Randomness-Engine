@@ -4,7 +4,7 @@ This random number generator generates "balanced" result by making sure that the
 ## Generation
 The engine keeps track of the sum and count of all generated numbers. When it generates a number, it checks if the new sum is within the specified number of standard deviations away from the average. If so, it returns that value, otherwise, it generates a new one and checks again.
 
-The engine uses 2 as the default number of deviations, which corresponds to 95.44% of all results, but you are able to set that number yourself. The following is a list of numbers of deviations together with the chance that a sum is within that range:
+The engine uses 2 as the default number of deviations, which corresponds to 95.45% of all results, but you are able to set that number yourself. The following is a list of numbers of deviations together with the chance that a sum is within that range:
 
 -0.674 SD: ~50.00%
 
