@@ -42,7 +42,7 @@ private:
 	std::uniform_int_distribution<int> m_Distribution;
 
 	int m_Sum{};
-	int m_AmountGenerated{};
+	int m_Count{};
 };
 
 #endif

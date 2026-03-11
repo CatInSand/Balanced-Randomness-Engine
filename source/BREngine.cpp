@@ -20,8 +20,8 @@ int BREngine::Generate()
 	{
 		result = m_Distribution(m_RD);
 
-		float cumulativeMean{ (m_AmountGenerated + 1) * m_Mean };
-		float cumulativeDeviation{ sqrt(static_cast<float>(m_AmountGenerated + 1)) * m_StandardDeviation };
+		float cumulativeMean{ (m_Count + 1) * m_Mean };
+		float cumulativeDeviation{ sqrt(static_cast<float>(m_Count + 1)) * m_StandardDeviation };
 
 		if (m_Sum + result > cumulativeMean - cumulativeDeviation * m_Deviations &&
 			m_Sum + result < cumulativeMean + cumulativeDeviation * m_Deviations)
@@ -32,7 +32,7 @@ int BREngine::Generate()
 	} while (!valid);
 
 	m_Sum += result;
-	++m_AmountGenerated;
+	++m_Count;
 
 	return result;
 }
