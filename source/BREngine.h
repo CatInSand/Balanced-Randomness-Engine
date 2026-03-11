@@ -2,7 +2,6 @@
 #define BRENGINE_H
 
 #include <random>
-#include <vector>
 
 /**
 A random number generator that balances results by ensuring the sum of all results
