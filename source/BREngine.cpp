@@ -48,15 +48,13 @@ int BREngine::Count() const
 
 float BREngine::CalculateStandardDeviation(int min, int max)
 {
-	int count{ min + max - 1 };
 	float mean{ (min + max) / 2.f };
 
-	float result{};
-	for (int index{ 1 }; index <= count; ++index)
+	float variance{};
+	for (int value{ min }; value <= max; ++value)
 	{
-		result += (index - mean) * (index - mean);
+		variance += (value - mean) * (value - mean);
 	}
-	result = sqrt(result / count);
-
-	return result;
+	variance /= min + max - 1;
+	return sqrt(variance);
 }
