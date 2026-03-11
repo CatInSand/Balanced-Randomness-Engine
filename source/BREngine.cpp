@@ -19,11 +19,13 @@ int BREngine::Generate()
 	const float lowerBound{ cumulativeMean - cumulativeDeviation * m_Deviations };
 	const float upperBound{ cumulativeMean + cumulativeDeviation * m_Deviations };
 
+	constexpr float EPSILON{ 0.00001f };
+
 	while (true)
 	{
 		int result{ m_Distribution(m_RD) };
-		if (m_Sum + result > lowerBound &&
-			m_Sum + result < upperBound)
+		if (m_Sum + result > lowerBound - EPSILON &&
+			m_Sum + result < upperBound + EPSILON)
 		{
 			m_Sum += result;
 			++m_Count;
