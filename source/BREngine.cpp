@@ -1,4 +1,5 @@
 #include "BREngine.h"
+#include <assert.h>
 
 BREngine::BREngine(int min, int max, float deviations)
 	: m_MinResult{ min }
@@ -8,7 +9,7 @@ BREngine::BREngine(int min, int max, float deviations)
 	, m_Distribution{ min, max }
 	, m_Deviations{ deviations }
 {
-
+	assert(min <= max);
 }
 
 int BREngine::Generate()
