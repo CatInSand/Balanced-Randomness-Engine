@@ -35,6 +35,20 @@ public:
 
 	float m_Deviations;
 
+	/**
+	* Getter for the internal sum of all generated numbers.
+	*
+	* @return The sum.
+	*/
+	int Sum() const;
+
+	/**
+	* Getter for the internal count of generated numbers.
+	*
+	* @return The count.
+	*/
+	int Count() const;
+
 private:
 	static float CalculateStandardDeviation(int min, int max);
 

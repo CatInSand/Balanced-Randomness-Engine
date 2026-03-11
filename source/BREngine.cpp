@@ -40,7 +40,16 @@ int BREngine::Generate()
 void BREngine::Reset()
 {
 	m_Sum = 0;
-	m_AmountGenerated = 0;
+	m_Count = 0;
+}
+
+int BREngine::Sum() const
+{
+	return m_Sum;
+}
+int BREngine::Count() const
+{
+	return m_Count;
 }
 
 float BREngine::CalculateStandardDeviation(int min, int max)
