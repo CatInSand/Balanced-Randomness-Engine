@@ -1,12 +1,5 @@
 #include "BREngine.h"
 
-/**
- * Constructs a balanced randomness engine
- * 
- * @param min: Minimum value the engine can generate.
- * @param max: Maximum value the engine can generate.
- * @param deviations: The number of standard deviations the results must stay inside.
- */
 BREngine::BREngine(int min, int max, float deviations)
 	: m_MinResult{ min }
 	, m_MaxResult{ max }
@@ -18,11 +11,6 @@ BREngine::BREngine(int min, int max, float deviations)
 
 }
 
-/**
- * Generates a random number between the minimum and maximum
- *
- * @return The random number.
- */
 int BREngine::Generate()
 {
 	int result{ m_Distribution(m_RD) };
@@ -49,10 +37,6 @@ int BREngine::Generate()
 	return result;
 }
 
-/**
- * Resets the internal counters that track previous results
- * 
- */
 void BREngine::Reset()
 {
 	m_Sum = 0;

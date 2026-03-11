@@ -6,9 +6,26 @@
 class BREngine final
 {
 public:
+	/**
+	* Constructs a balanced randomness engine
+	*
+	* @param min: Minimum value the engine can generate.
+	* @param max: Maximum value the engine can generate.
+	* @param deviations: The number of standard deviations the results must stay inside.
+	*/
 	BREngine(int min, int max, float deviations = 2.f);
 
+	/**
+	* Generates a random number between the minimum and maximum
+	*
+	* @return The generated number.
+	*/
 	int Generate();
+
+	/**
+	* Resets the internal counters that track previous results
+	*
+	*/
 	void Reset();
 
 	const int m_MinResult;
