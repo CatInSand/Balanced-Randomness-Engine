@@ -68,7 +68,7 @@ public:
 private:
 	static float CalculateStandardDeviation(int min, int max);
 
-	std::random_device m_RD; //unitialized by design
+	std::random_device m_RD; //uninitialized by design
 	std::uniform_int_distribution<int> m_Distribution;
 
 	int m_Sum{};
