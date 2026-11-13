@@ -50,7 +50,7 @@ public:
 	/**
 	The number of standard deviations the sum of results will stay within.
 	*/
-	float m_Deviations;
+	const float m_Deviations;
 
 	/**
 	* Getter for the internal sum of all generated numbers.
