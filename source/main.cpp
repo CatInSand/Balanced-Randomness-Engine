@@ -76,9 +76,9 @@ void TestEngine(int min, int max, int numberCount, int sampleCount, float deviat
 
 int main()
 {
-	TestEngine(1, 20, 20, 10000, 0.2f);
-	TestEngine(1, 20, 20, 10000, 1.f);
-	TestEngine(1, 20, 20, 10000, 2.f);
-	TestEngine(1, 20, 20, 10000, 3.f);
-	TestEngine(1, 20, 20, 10000, 1000.f);
+	TestEngine(1, 20, 20, 100000, 0.2f);
+	TestEngine(1, 20, 20, 100000, 1.f);
+	TestEngine(1, 20, 20, 100000, 2.f);
+	TestEngine(1, 20, 20, 100000, 3.f);
+	TestEngine(1, 20, 20, 100000, 1000.f);
 }
